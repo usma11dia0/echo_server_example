@@ -9,6 +9,7 @@ client_socket = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
 
 # サーバーに接続
 client_socket.connect((server_ip, server_port))
+print('サーバーに接続しました')
 
 # サーバーにデータを送信する
 client_socket.sendall('Hello, Server!'.encode())
@@ -19,3 +20,4 @@ print(f'受信データ: {data.decode()}')
 
 # ソケットを閉じる
 client_socket.close()
+print(f'clientのソケットを閉じました。')
