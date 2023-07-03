@@ -1,3 +1,6 @@
+# 公式ドキュメント socketモジュール
+# https://docs.python.org/ja/3/library/socket.html
+
 import socket
 
 # サーバーの設定
