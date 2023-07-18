@@ -3,25 +3,38 @@ import socket
 HOST = 'localhost'
 PORT = 12345
 
-tmp = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
-tmp.bind((HOST, PORT))
-tmp.listen(10)
+with socket.socket(socket.AF_INET, socket.SOCK_STREAM) as s:
+    s.bind((HOST, PORT))
+    s.listen(10)
+    conn, address = s.accept()
+    with conn:
+        while True:
+            data = conn.recv(1024)
+            data_str = data.decode('utf-8')
+            print(f'data: {data_str}')
+            if not data:
+                break
+            conn.sendall(data)
 
-print(f'tmp: {tmp}')
+# tmp = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
+# tmp.bind((HOST, PORT))
+# tmp.listen(10)
 
-conn, address = tmp.accept()
+# print(f'tmp: {tmp}')
 
-print(f'conn: {conn}')
-print(f'address: {address}')
+# conn, address = tmp.accept()
 
-while True:
-    data = conn.recv(1024)
-    print(f'data: {repr(data)}')
-    if not data:
-        break
-    conn.sendall(data)
+# print(f'conn: {conn}')
+# print(f'address: {address}')
 
-print('end')
+# while True:
+#     data = conn.recv(1024)
+#     print(f'data: {repr(data)}')
+#     if not data:
+#         break
+#     conn.sendall(data)
+
+# print('end')
     
 
 
