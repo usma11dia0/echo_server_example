@@ -15,9 +15,9 @@ print(f'address:{address}')
 
 while True:
     pass
-    # data = conn.recv(1024)
-    # print(f'data: {data}')
-    # # conn.sendall(data)
-    # # if not data:
-    # #     break
+    data = conn.recv(1024)
+    print(f'data: {data}')
+    conn.sendall(data)
+    if not data:
+        break
 

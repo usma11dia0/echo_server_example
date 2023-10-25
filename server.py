@@ -31,6 +31,7 @@ with socket.socket(socket.AF_INET, socket.SOCK_STREAM) as s:
                 print(f'method:{method},path:{path},version:{version}')
 
                 if method == "GET":
+                    # ウェブブラウザにより自動的に送られるfaviconのGETリクエスト対応
                     if path == "/favicon.ico":
                         with open("www/favicon.ico", "rb") as f:
                             icon_data = f.read()
