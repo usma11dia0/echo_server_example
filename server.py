@@ -55,6 +55,7 @@ with socket.socket(socket.AF_INET, socket.SOCK_STREAM) as s:
                 print(f'request_line:{request_line}')
                 print(f'method:{method},path:{path},version:{version},mime_type:{mime_type}')
 
+                # GETメソッドの処理
                 if method == "GET":
                     if path == "/index.html":
                         with open("www/index.html", "r") as f:
