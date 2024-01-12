@@ -88,5 +88,7 @@ with socket.socket(socket.AF_INET, socket.SOCK_STREAM) as s:
                 break
 
 
+
 # 参考URL
 # https://kei-kmj.hatenablog.com/entry/2023/06/19/125411
+# 社用PC側に宿題内容を記載しているので確認する。未実施
